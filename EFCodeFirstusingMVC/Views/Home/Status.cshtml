@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Status";
+}
+
+<h2>Status</h2>
+@{
+    if (Model > 0)
+    {
+    <h2>Data Inserted</h2>
+    }
+    else
+    {
+    <h2>Data not inserted</h2>
+    }
+}
+@*@Html.Raw()*@
+@* when session state come with js code then html.raw used. *@
+

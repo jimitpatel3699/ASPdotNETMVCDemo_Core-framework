@@ -1,0 +1,93 @@
+﻿@model IEnumerable<EFcodefirstinCoreMVC.Models.Product>
+<partial name="_Notification" />
+<div class="container">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Product List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Product" asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-file-earmark-plus"></i>Add Product
+            </a>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ISBN)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model=>model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Category)
+            </th>
+            <th>
+                    
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ISBN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                 <img src="@item.ImageUrl" width="100%" style="border-radius:5px; border:2px solid #bbb9b9" />
+               @* @Html.DisplayFor(modelItem=>item.ImageUrl)*@
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info my-2"><i class="bi bi-credit-card-2-front"></i>Details</a>
+                        </div>
+                    </td>
+            <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-success my-2"><i class="bi bi-pencil-square"></i>Edit</a> 
+                        </div>
+            </td>
+            <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger my-2"><i class="bi bi-trash-fill"></i>Delete</a>
+                        </div>                                              
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

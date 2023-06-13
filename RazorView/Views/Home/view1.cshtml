@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "view1";
+}
+
+<h2>view1</h2>
+@{ 
+    if (DateTime.IsLeapYear(DateTime.Now.Year))
+    {
+    @DateTime.Now.Year @:is a leap year.
+    }
+    else
+    {
+    @DateTime.Now.Year @:is not a leap year.
+    }
+}
+

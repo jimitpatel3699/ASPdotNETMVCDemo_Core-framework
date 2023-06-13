@@ -1,0 +1,28 @@
+﻿@model HtmlHealperControls.Models.Student
+@{
+    ViewBag.Title = "HtmlInput";
+}
+
+<h2>HtmlInput</h2>
+
+@using (Html.BeginForm())//open a form tag
+ {
+    @Html.LabelFor(model => model.StudentName, new {@class="form-control"})
+    @Html.TextBoxFor(model => model.StudentName, new {@class="form-control"})
+    @Html.LabelFor(model=>model.Address,new {@class="form-control" })
+    @Html.TextAreaFor(model => model.Address,new {@class="form-control"})
+    @Html.LabelFor(model=>model.IsActive)
+    @Html.CheckBoxFor(model => model.IsActive)
+    @Html.LabelFor(model=>model.Gender,"Male")
+    @Html.RadioButtonFor(model=>model.Gender,"Male")
+    @Html.LabelFor(model=>model.Gender,"Female")
+    @Html.RadioButtonFor(model=>model.Gender,"Female")
+    <br />
+ @Html.EditorFor(model => model.Id)
+ @Html.EditorFor(model => model.Dob)
+ @Html.EditorFor(model => model.Address)
+ @Html.EditorFor(model => model.Mobile)
+ @Html.EditorFor(model => model.IsActive)
+ @Html.EditorFor(model => model.Gender,"Male")
+ @Html.EditorFor(model=>model.Gender,"Female")
+ }

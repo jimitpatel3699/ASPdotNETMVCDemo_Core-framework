@@ -1,0 +1,25 @@
+﻿@model IEnumerable< EFCodeFirstusingMVC.Models.Student>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table border="2">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+    </tr>
+    @{ foreach (var item in Model)
+       {
+            <tr>
+                <th>@item.Id</th>
+                <th>@item.Name</th>
+                <th>@item.Gender</th>
+                <th>@item.Age</th>
+            </tr> 
+       }
+    }
+</table>
